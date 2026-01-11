@@ -1,0 +1,33 @@
+.btn {
+  padding: 12px;
+  border: none;
+  transition: 0.3s;
+}
+.ouro {
+  background: gold;
+}
+.prata {
+  background: silver;
+}
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.loading {
+  animation: pulse 1s infinite;
+}
+.dark {
+  border: 2px solid white;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
