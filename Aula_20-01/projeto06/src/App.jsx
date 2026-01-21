@@ -2,9 +2,12 @@ import CardEmployee from "./components/CardEmployee";
 import { useState } from "react";
 
 function App() {
-  const [nDesativados, setNDesativados] = useState(0);
-  const handleAtualizar = () => {
-    setNDesativados((prev) => prev + 1);
+  const [nDesligados, setNDesligados] = useState(0);
+  const handleAtivar = () => {
+    setNDesligados((prev) => prev + 1);
+  };
+  const handleInativar = () => {
+    setNDesligados((prev) => prev - 1);
   };
 
   const employees = [
@@ -14,14 +17,18 @@ function App() {
   ];
   return (
     <>
-      <h1>Número de colaboradores desativados: {nDesativados}</h1>
+      <h1>
+        Número de colaboradores desligados:{" "}
+        <b>{nDesligados > 0 ? nDesligados : "Nenhum"}</b>
+      </h1>
       {employees.map((employee) => (
         <CardEmployee
           key={employee.id}
           id={employee.id}
           nome={employee.nome}
           cargo={employee.cargo}
-          avisaroPai={handleAtualizar}
+          inativar={handleInativar}
+          ativar={handleAtivar}
         />
       ))}
     </>
