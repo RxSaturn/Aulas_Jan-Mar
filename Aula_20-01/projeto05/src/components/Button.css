@@ -1,0 +1,13 @@
+.btn {
+  margin: 5px;
+  padding: 10px 20px;
+  border: 2px solid #ccc;
+  background-color: rgba(13, 136, 189, 0.8);
+  color: white;
+}
+
+.btn:disabled {
+  background-color: #999;
+  border-color: #666;
+  cursor: not-allowed;
+}
