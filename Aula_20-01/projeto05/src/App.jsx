@@ -7,7 +7,6 @@ import DisplayList from "./components/DisplayList";
 function App() {
   const [item, setItem] = useState("");
   const onChangeItem = (event) => {
-    console.log(event.target.value);
     setItem(event.target.value);
   };
 
@@ -21,7 +20,6 @@ function App() {
       }
       return value;
     });
-    console.log(event.target.value);
   };
   const medidas = [
     { value: "Kg", label: "Kg" },
@@ -29,18 +27,17 @@ function App() {
     { value: "Un", label: "Un" },
     { value: "Pct", label: "Pct" },
   ];
-  const [medida, setMedida] = useState("");
+  const [medida, setMedida] = useState("[ Selecione ]");
   const onChangeMedida = (event) => {
-    console.log(event.target.value);
     setMedida(event.target.value);
   };
   const cleanForm = () => {
     setItem("");
     setQuantidade(1);
-    setMedida("");
+    setMedida("[ Selecione ]");
   };
 
-  const isOk = /\S/.test(item);
+  const isOk = /\S/.test(item) && medida !== "[ Selecione ]";
 
   const [estoque, setEstoque] = useState([]);
   const handleAddEstoque = () => {
